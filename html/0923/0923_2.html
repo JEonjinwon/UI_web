@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+
+function testInnerHTML(){
+
+	var str = "";
+
+	str +=  "<button onclick=test()>1</button>";
+	
+	document.getElementById("inHere").innerHTML = str;
+		}
+
+
+function test() {
+
+	
+	var str2 = "";
+	
+	str2 +=  "<button onclick=test2()>&nbsp&nbsp&nbsp&nbsp2</button>";
+
+	document.getElementById("inHere2").innerHTML = str2;
+		}
+
+
+function test2() {
+	var str = "";
+	str +=  "<button onclick=test3()>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp3</button>";
+	document.getElementById("inHere3").innerHTML = str;
+		}
+function test3() {
+	var str = "";
+	str +=  "<button onclick=test4()>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp4</button>";
+	document.getElementById("inHere4").innerHTML = str;
+		}
+function test4() {
+	var str = "";
+	str +=  "<button onclick=test5()>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp5</button>";
+	document.getElementById("inHere5").innerHTML = str;
+		}
+function test5() {
+	var str = "";
+	str +=  "<button onclick=test6()>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp6</button>";
+	document.getElementById("inHere6").innerHTML = str;
+		}
+function test6() {
+	var str = "";
+	str +=  "<button onclick=test7()>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp7</button>";
+	document.getElementById("inHere7").innerHTML = str;
+		}
+function test7() {
+	var str = "";
+	str +=  "<button onclick=test8()>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp8</button>";
+	document.getElementById("inHere8").innerHTML = str;
+		}
+function test8() {
+	var str = "";
+	str +=  "<button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp9</button>";
+	document.getElementById("inHere9").innerHTML = str;
+		}
+
+
+</script>
+</head>
+<body>
+
+	  <input type="button" name="btn" value="숫자" onclick="javascript:testInnerHTML();">
+	  <div id="inHere"></div>
+	  <div id="inHere2"></div>
+	  <div id="inHere3"></div>
+	  <div id="inHere4"></div>
+	  <div id="inHere5"></div>
+	  <div id="inHere6"></div>
+	  <div id="inHere7"></div>
+	  <div id="inHere8"></div>
+	  <div id="inHere9"></div>
+
+</body>
+</html>

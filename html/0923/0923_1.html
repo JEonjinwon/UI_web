@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	function test() {
+		var input = prompt("주민번호를 입력하세요");
+		var i = input.substr(0, 2);
+		var i2 = input.substr(2, 2);
+		var i3 = input.substr(4, 2);
+
+		document.write("생년월일 : 19" + i + "년 " + i2 + "월" + i3 + "일<br>");
+		var j = input.substr(6, 1);
+		if (j == 1) {
+		
+			document.write("성별 : 남성");
+		} else {
+			document.write("성별 : 여성");
+		}
+	}
+	
+function test2(){
+	var jumin = prompt("주민번호 입력");
+	var str1 = jumin.replace("-","");
+	document.write(jumin.replace("-",""));
+	
+	var sum = 0;
+	for (var i = 0; i < str1.length-1; i++) {
+		sum+=srt1.charAt(i)*(i%8+2);
+		
+	}
+}	
+</script>
+</head>
+<body>
+<input value="1번" type="button" onclick="test()">
+<input value="2번" type="button" onclick="test2()">
+</body>
+</html>
