@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var temp = 0;
+	var random = Math.floor(Math.random() * 10 + 1);
+	
+	
+	
+	function input() {
+		var number = document.getElementById("number").value;
+		if (number == random) {
+			document.getElementById("message").innerHTML = "정답";
+
+		} else if (number > random) {
+			document.getElementById("message").innerHTML =number+" 이  난수 값 보다큼";
+		} else if(number<random){
+			document.getElementById("message").innerHTML = number+" 이  난수 값 보다작음";
+		}
+	}
+</script>
+</head>
+<body>
+	<h1>Number Guess</h1>
+	<p>1부터 10 사이의 숫자를 입력하시오.</p>
+	<input id="number" type="text">
+	<button type="button" onclick="input()">숫자 추측</button>
+	<p id="message">힌트</p>
+</body>
+</html>

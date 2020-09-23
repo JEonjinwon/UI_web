@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	function Lotto() {
+		var lotto = new Array(6);
+		var count = 0; 
+		var overl = true; 
+
+		while (count < 6) { 
+			var number = 0; 
+			number = parseInt(Math.random() * 45) + 1;
+
+			for (var i = 0; i < count; i++) { 
+				if (lotto[i] == number) { 
+					overl = false;
+				}
+			}
+
+			if (overl) { 
+				lotto[count] = number; 
+				count++;
+			}
+
+			overl = true;
+		}
+		var lotto_text = document.getElementById("lotto_text"); 
+
+		
+		lotto_text.value = lotto[0] + ', ' + lotto[1] + ', ' + lotto[2] + ', '
+				+ lotto[3] + ', ' + lotto[4] + ', ' + lotto[5];
+	}
+</script>
+
+
+</head>
+<body>
+	<input type="text" readonly="" id="lotto_text">
+	<input type="button" value="로또생성" onclick="Lotto()">
+
+
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript">
+	function proc1() {
+		var inputVal = document.getElementById("user").value;
+		var arr = [ "가위", "바위", "보" ];
+		var random = Math.floor(Math.random() * 3);
+		var comVal = arr[random];
+		var str = "";
+		if (inputVal == "가위") {
+			if (comVal == arr[0]) {
+				str = "비김";
+			} else if (comVal == arr[1]) {
+				str = "패배";
+			} else if (comVal == arr[2]) {
+				str = "이김";
+			}
+
+		} else if (inputVal == "바위") {
+			if (comVal == arr[0]) {
+				str = "이김";
+			} else if (comVal == arr[1]) {
+				str = "비김";
+			} else if (comVal == arr[2]) {
+				str = "패배";
+			}
+
+		} else if (inputVal == "보") {
+
+			if (comVal == arr[0]) {
+				str = "패배";
+			} else if (comVal == arr[1]) {
+				str = "이김";
+			} else if (comVal == arr[2]) {
+				str = "비김";
+			}
+
+		}
+
+		document.getElementById("com").innerHTML = comVal;
+		document.getElementById("res2").innerHTML = str;
+	}
+</script>
+
+</head>
+<body>
+
+	당신 :
+	<input type="text" id="user">
+	<input type="button" value="가위바위보 " onclick="proc1()">
+	<br> computer :
+	<span id="com"></span>
+	<br> result :
+	<span id="res2"></span>
+	<br>
+</body>
+</html>

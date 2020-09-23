@@ -1,0 +1,21 @@
+<html>
+ <head>
+  <title> New Document </title>
+  <script>
+     arr = new Array("red","green","blue","pink", "yellow");
+ 
+      var i=0;
+     function bgChange(){
+         document.bgColor = arr[i++];
+         if(i == arr.length) i=0;
+ 
+        setTimeout("bgChange()" , 1000);
+     }
+ 
+  </script>
+ </head>
+ 
+ <body onLoad="bgChange()">
+ 
+ </body>
+</html>
