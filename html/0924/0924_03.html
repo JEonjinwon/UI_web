@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script>
+
+  var count =0;
+  function changeImage(){
+    console.log(obj);
+    var obj = document.getElementById("image");
+    var arr = obj.src.split("/");
+    count++;
+    if(arr[arr.length-1]=="sw_off.png"){
+      obj.src = "img/sw_on.png";
+    }else{
+      obj.src = "img/sw_off.png";
+
+    }
+  }
+</script>
+
+<title>Insert title here</title>
+<style>
+
+</style>
+</head>
+<body>
+
+
+    <img src="img/sw_on.png" alt="" id="image" width="700px"height="auto"  onclick="changeImage()">
+  <br>
+
+
+</body>
+</html>

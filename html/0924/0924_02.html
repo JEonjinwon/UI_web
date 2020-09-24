@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script >
+  function changeImage(){
+    document.getElementById("image").src = "https://www.timeforum.co.kr/files/attach/images/77/425/569/fdbbf62c34fab20c469aa6203260ed98.png";
+  }
+  function changeStyle(){
+    document.getElementById("p1").style.color="red";
+    document.getElementById("p1").style.fontStyle="italic";
+  }
+</script>
+
+</head>
+<body>
+<img src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F26569A3E5294155616" alt="" id="image" width="700px"height="auto">
+<br>
+<p id="p1">asdasd</p>
+<input type="button" onclick="changeImage()"  value="사진교체">
+<input type="button" onclick="changeStyle()"  value="글자교체">
+
+
+</body>
+</html>
