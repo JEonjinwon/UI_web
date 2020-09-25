@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script type="text/javascript">
+
+  function a1(){
+    var com = Math.floor(Math.random()*3+1);
+      var obj = document.getElementById("image");
+      var obj2 = document.getElementById("image2");
+      var obj3 = document.getElementById("my").options[document.getElementById("my").selectedIndex].value;
+      var obj4 = document.getElementById("result");
+      var str1='ㅇ무승부 입니다ㅇ ';
+      var str2='당신이 패배했슴다 ';
+      var str3='당신이 이겼습니다 ';
+       var node1 = document.createTextNode(str1);
+       var node2 = document.createTextNode(str2);
+       var node3 = document.createTextNode(str3);
+    switch (com) {
+      case 1:
+        obj.src="가위_우.png"
+        if(obj3=="가위"){
+            obj2.src="가위_좌.png"
+            obj4.appendChild(node1);
+        }else if (obj3=="바위") {
+            obj2.src="바위_좌.png"
+              obj4.appendChild(node4);
+        }else{
+            obj2.src="보_좌.png"
+              obj4.appendChild(node2);
+        }
+      break;
+      case 2:
+        obj.src="바위_우.png"
+        if(obj3=="가위"){
+            obj2.src="가위_좌.png"
+              obj4.appendChild(node2);
+        }else if (obj3=="바위") {
+            obj2.src="바위_좌.png"
+              obj4.appendChild(node1);
+        }else{
+            obj2.src="보_좌.png"
+              obj4.appendChild(node3);
+        }
+      break;
+      case 3:
+        obj.src="보_우.png"
+        if(obj3=="가위"){
+            obj2.src="가위_좌.png"
+              obj4.appendChild(node3);
+        }else if (obj3=="바위") {
+            obj2.src="바위_좌.png"
+              obj4.appendChild(node2);
+        }else{
+            obj2.src="보_좌.png"
+              obj4.appendChild(node1);
+        }
+      break;
+    }
+  }
+
+  </script>
+  <style media="screen">
+  .d4{
+    text-align: center;
+    float: left;
+    width: 100%;
+
+  }
+  .d1{
+    width: 50%;
+    background-color: red;
+    float: left;
+    height: 500px;
+
+
+  }
+  .d2{
+    width: 50%;
+    background-color: blue;
+    float: left;
+    height: 500px;
+
+  }
+  #b1{
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  .d3{
+    text-align: center;
+    width: 100%;
+    float: left;
+  }
+span{
+  float: left;
+  width: 300px;
+}
+  </style>
+</head>
+<body>
+  <br>
+  <div class="d3">
+    <select id="my" name="game">
+      <option value="가위">가위</option>
+      <option value="바위">바위</option>
+      <option value="보">보</option>
+    </select>
+    <input type="button" id="b1"name="" value="게임시작" onclick="a1()" >
+  </div>
+  <br><br>
+  <div class="d4">
+    <div class="d1">
+    <h1>사람</h1><br><br>
+      <img src="바위_좌.png" alt="" id="image2" width="200px"height="auto">
+    </div>
+    <div class="d2">
+      <h1>컴퓨터</h1><br><br>
+      <img src="바위_우.png" alt="" id="image" width="200px"height="auto">
+    </div>
+  </div>
+  <div>
+    <h1>결과</h1>
+   <h1><span id="result"> </span></h1>
+
+</html>

@@ -1,0 +1,133 @@
+@charset "UTF-8";
+
+body{
+	 background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+		 url(http://grassone90.cafe24.com/web/upload/NNEditor/20170620/3O9A9637_shop1_132053.jpg);
+	 min-width:1500px;
+	 min-height: auto;
+
+	color: white;
+font-family: "Jua";
+
+}
+
+header {
+	background-color:rgb(254,197,7);
+	float: inherit;
+	text-align: center;
+	margin: 0px 10px 0px 10px;
+
+
+}
+
+nav {
+	float: inherit;
+	text-align: center;
+	margin: 20px 10px;
+	font-weight: bold;
+}
+
+section {
+	float: left;
+	width: 55%;
+	text-align: left;
+	padding-bottom: 30px;
+	padding-top: 30px;
+	margin-left: 5px;
+}
+
+footer {
+	float: left;
+	width: 100%;
+	text-align: left;
+	 height: 100%;
+}
+
+#ul1 {
+	list-style: none;
+	width: 100%;
+	;
+}
+
+#li1 {
+	display: inline;
+	border-left: 1px solid;
+	font: bold;
+	padding: 0 15px;
+}
+
+a.a1 {
+	text-decoration: none;
+	color: pink;
+}
+
+a.a1:hover {
+	color: olive;
+	background-color: pink;
+}
+
+a.a2 {
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
+	font-size: 100px;
+}
+
+a.a2:hover {
+	text-decoration: underline;
+	color: skyblue;
+
+}
+
+#left {
+	float: left;
+	width: 15%;
+}
+
+#right {
+	float: right;
+	width: 25%;
+	margin-right: 20px;
+
+}
+
+#ul2 {
+	list-style: none;
+	background-color: gray;
+	float: left;
+	width: 100%;
+	padding: 0;
+}
+
+#li2 {
+	font-weight: bold;
+	margin-bottom: 8px;
+}
+
+a.a3 {
+	text-decoration: none;
+	font-weight: bold;
+	color: white;
+}
+
+a.a3:hover {
+	text-decoration: underline;
+	color: black;
+}
+footer{
+padding-top: 5%;
+
+}
+
+hr{
+	border:2px solid pink;
+}
+
+a.a4:hover{
+	color: olive;
+	background-color: #b59892;
+}
+
+a.a4:visited{
+	color: pink;
+}

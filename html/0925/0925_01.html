@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<button onclick="proc()">이미지 추가</button>
+<br>
+<ul>
+   <li onclick="proc()" id="a.gif">a1</li>
+   <li onclick="proc()" id="b.gif">a2</li>
+   <li onclick="proc()" id="d.jpg">a3</li>
+</ul>
+</body>
+
+<script type="text/javascript">
+// ul 밑에 li를 가져와서 길이를 구해줘
+
+// var arr1 = document.getElementsByTagName("ul");   // 배열
+// var arr2 = arr1[0].getElementsByTagName("li");   // 배열
+// 아래 위 둘 다 같게 쓸 수 있음! (코딩 스타일 마다 다르지만 아래것이 좋당)
+// var list = document.getElementsByTagName("ul")[0];   // 배열
+// var items = list.getElementsByTagName("li");   // 배열
+
+// // console.log(arr1);
+// // console.log(arr2);
+
+// console.log(list);
+// console.log(items);
+
+// for(var i=0; i < items.length; i++) {
+//    console.log(items[i].firstChild);
+// }
+
+function proc(){
+   var items = document.getElementsByTagName("li");
+   for(var i=0; i < items.length; i++) {
+      // 추가할 이미지 파일의 파일명들
+      // list item의 ID로 세팅해 놓았음
+      var name = items[i].id;
+      var obj = document.createElement("img"); // 새로운 이미지 요소(<img>)
+
+      obj.src = "" + name;
+      obj.style.width = "100px";
+
+      items[i].appendChild(obj); // li
+   }
+}
+
+
+</script>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+   //사용자가 선택한 값을 확인하는 과정 추가
+   function myFunction() {
+      var num;
+      //1번 : <select>태그를 객체로 접근
+      //2번 : 해당 태그의 선택된 <option>태그를 객체로 접근
+      //3번 : 해당 태그의 value=""속성의 값 확인
+      // <select>접근 후 ->value=""속성의 값에 접근해도 같은 값이 출력된다.
+      num = document.getElementById("num").value; // 사용된 value 는 <body>의 <option>의 value값을 의미
+
+      //구구단 과정
+      var result = "";
+      var sum =0;
+      for (var i = 1; i <= 9; ++i) {
+         result += num + " * " + i + " = " + (num * i) +"\n"+"\n";
+      }
+      document.getElementById("result").innerHTML = result;
+   }
+</script>
+</head>
+<body>
+   <div>
+      <!-- 선택목록 태그 이용한 구구단 출력 -->
+      <form>
+         구구단
+         <!-- <select>태그는 단일선택, 다중선택을 지원한다. -->
+         <select id="num">
+            <!-- id= 식별자 -->
+            <!-- 화면에 출력되는 데이터와 프로그램에서 필요하는 데이터를 별도 운영.
+    특정범위의 데이터만 입력되도록 하는 방법
+    <option>태그에서 value =""속성을 이용하면 프로그램에서
+    해당 태그를 객체로 접근시 선택한 값을 읽어올수 있다. -->
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+         </select> <input type="button" value="선택" onclick="myFunction()">
+      </form>
+   <textarea id="result" rows="50" cols="50">  </textarea>
+
+   </div>
+
+</body>
+</html>
