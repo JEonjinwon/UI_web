@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title></title>
+
+</head>
+<body>
+   <form>
+
+
+      <p>
+         이름 <input type="text" id="name">
+      </p>
+      <p>
+         성별 남<input type="radio" name="gender" value="남자"> 여<input
+            type="radio" name="gender" value="여자">
+      </p>
+      <p>
+         취미 <label><input type="checkbox" name=hobby " value="여행">여행</label>
+         <label><input type="checkbox" name=hobby " value="독서">독서</label>
+         <label><input type="checkbox" name=hobby " value="영화감상">영화감상</label>
+         <label><input type="checkbox" name=hobby " value="바둑">바둑</label>
+         <label><input type="checkbox" name=hobby " value="장기">장기</label>
+         <label><input type="checkbox" name=hobby " value="등산">등산</label>
+         <label><input type="checkbox" name=hobby " value="낚시">낚시</label>
+      </p>
+      <input type="button" value="결과 출력" onclick="input()"><br>
+
+      <textarea name="name" rows="8" cols="80" id="result"></textarea>
+   </form>
+
+   <script type="text/javascript">
+      function input() {
+         var name = document.getElementById('name').value;
+         var input = name;
+
+         var checked_c = document.getElementsByName("gender").length;
+         var checked_c2 = document.getElementsByName("hobby").length;
+
+         var value3 = new Array();
+
+         for (var i = 0; i < checked_c; i++) {
+            if (document.getElementsByName("gender")[i].checked == true) {
+               value2 = document.getElementsByName("gender")[i].value;
+            }
+         }
+         for (var i = 0; i < checked_c2; i++) {
+            if (document.getElementsByName("hobby")[i].checked == true) {
+               value3[i] = document.getElementsByName("hobby")[i].value;
+            }
+         }
+
+         document.getElementById("result").value = name+"님의 성별은 " + value2 + "취미는 "
+               + value3.toString();
+
+      }
+   </script>
+</body>
+</html>
