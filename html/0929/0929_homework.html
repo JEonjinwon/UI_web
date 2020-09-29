@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="../../js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+   $("input[type='text']").css("background-color","olive").css("border","solid 3px blue");
+   $("input[type='password']").css("background-color","olive").css("border","solid 3px blue");
+   $("textarea[id='myTextarea']").css("background-color","olive").css("border","solid 3px #33ffc9");
+   $("input[type='image']").css("border","solid 3px red");
+   $("input[type='file']").css("background-color","#4050f0").css("border","solid 3px red");
+   $("[type='button'").css("background-color","#40f0ff").css("border","solid 3px #33ffc9");
+   $("[type='submit'").css("background-color","#f0624b").css("border","solid 3px #33ffc9");
+   $("[type='reset'").css("background-color","#cf82ff").css("border","solid 3px #33ffc9");
+});
+
+</script>
+</head>
+<body>
+	<form onsubmit="return false;">
+		Text : <input type="text" /><br> Password : <input
+			type="password" /><br> <br> Radio : <input type="radio"
+			name="radioGroup" id="radioA" value="A" /> A <input type="radio"
+			name="radioGroup" id="radioB" value="B" /> B <br> <br>
+		Checkbox : <input type="checkbox" name="checkboxes" id="checkbox1"
+			value="1" /> 1 <input type="checkbox" name="checkboxes"
+			id="checkbox2" value="2" /> 2<br> <br> Textarea : <br>
+		<textarea rows="15" cols="50" id="myTextarea" id="myTextarea"></textarea>
+		<br> <br> Image : <input type="image"
+			src="../../image/coffee.jpg" width="50px"><br> <br>
+		File : <input type="file"><br> <br> Buttons :
+		<button type="button" id="normalButton">Normal</button>
+		<button type="submit" id="submitButton">Submit</button>
+		<button type="reset" id="resetButton">Reset</button>
+		<br> <br> <input type="button" value="일반버튼"> <input
+			type="submit" value="전송버튼"> <input type="reset" value="초기화버튼">
+		<br> <br>
+	</form>
+
+</body>
+</html>
