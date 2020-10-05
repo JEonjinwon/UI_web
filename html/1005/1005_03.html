@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../../js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+	var img1 = "../../image/man.gif";
+	var orgsrc;	//원본 img담을 변수
+
+	$(document).ready(function() {
+		$("#showBtn").hide();
+		//이미지에 마우스 올리면 다른 이미지
+		$('img').mouseover(function() {
+			orgsrc = $(this).attr("src");
+			$(this).attr("src", img1);
+		});
+		//이미지에서 마우스 내리면 원본 이미지
+		$('img').mouseout(function() {
+			$(this).attr("src", orgsrc);
+		});
+		//이미지 더블클릭시 이미지가 사라짐
+		$('img').dblclick(function() {
+			$(this).hide();
+			//이미지가 모두 사라지면 버튼이 보인다.
+			if ($('img:visible').length == 0) {
+				$("#showBtn").show();
+			}
+
+		});
+		//이지마가 모두 사라지면 이미지 하단에[보이기]button이 나타남
+		$("#showBtn").dblclick(function() {
+			$('img').show();
+			$("#showBtn").hide();
+		});
+
+	});
+</script>
+</head>
+<body>
+	<img src="../../image/coffee.jpg" width="200px" >
+	<img src="../../image/1.png" width="200px" >
+	<img src="../../image/2.png" width="200px" >
+	<img src="../../image/banana.jpg" width="200px" >
+	<br>
+	<br>
+	<button id="showBtn">보이기 버튼</button>
+
+</body>
+</html>

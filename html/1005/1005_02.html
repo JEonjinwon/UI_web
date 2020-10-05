@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../../js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+
+
+$(document).ready(function(){
+	   $(document).mousemove(function(e){
+	      $('#Log').html('X좌표 : '+e.pageX +', Y좌표 : '+ e.pageY);
+	   });
+	});
+
+</script>
+<style type="text/css">
+body{
+background-color: #ecf;
+}
+div{
+padding: 20px;
+}
+</style>
+</head>
+<body>
+<div id ="Log"></div>
+</body>
+</html>
