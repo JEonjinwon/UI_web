@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../../js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$("div")
+		.css("border", "2px dotted red")
+		.css("background","pink");
+	$("#hide").click(function() {
+		//$("p:nth-child(1)").hide();
+		$("p:first").hide();
+	});
+	$("#show").click(function() {
+		//$("p:nth-child(1)").show();
+		$("p:first").show();
+	});
+	$("#toggle").click(function() {
+		$("div").toggle("slow");
+	});
+	
+
+});
+
+</script>
+</head>
+<body>
+  <p>이 영역은 버튼을 누르면 사라졌다가 다시 나타납니다.</p>
+   <br>
+   <input id="hide" type="button" value="hide">
+   <input id="show" type="button" value="show">
+   <br>
+   <input id="toggle" type="button" value="토글버튼">
+   <br>
+   
+
+   <div>
+      <p>안녕하십니까.</p>
+      <p>안녕히 가십시오.</p>
+      
+   </div>
+
+</body>
+</html>

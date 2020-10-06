@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../../js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("div").css({
+			"width" : 500,
+			"height" : 500,
+			"border" : "1px solid black"
+		}).attr("align", "center");
+		$("#imgFadeIn").click(function() {
+			$("img").fadeIn(2000, function() {
+				alert("fadeIn 작업 완료");
+			});
+		});
+		$("#imgFadeOut").click(function() {
+			$("img").fadeOut(2000, function() {
+				alert("fadeOut 작업 완료");
+			});
+		});
+		$("img").mouseover(function() {
+			$(this).fadeTo(2000, 0.2);
+		});
+		$("img").mouseout(function() {
+			$(this).fadeTo(2000, 0.2);
+		});
+		$("#imgFadeToggle").click(function() {
+			$("img").fadeToggle(2000, function() {
+				alert("fadeToggle 작업 완료");
+			});
+		});
+	});
+</script>
+</head>
+<body>
+<input type="button" id="imgFadeIn" value="이미지 fadeIn">
+<input type="button" id="imgFadeOut" value="이미지 fadeOut">
+<input type="button" id="imgFadeToggle" value="이미지 fadeToggle">
+<br><br>
+<div><img src="../../image/ice.jpg" style="display: none;"width="500px"></div>
+</body>
+</html>

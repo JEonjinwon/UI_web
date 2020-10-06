@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../../js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$("div").css({
+		"width" : 500,
+		"height" : 500,
+		"border" : "1px solid black"
+	});
+	$('#show').click(function() {
+		$('img').show();
+	});
+	$('#hide').click(function() {
+		$('img').hide();
+	});
+	
+	$('#slideUp').click(function() {
+		$('img').slideUp();
+	});
+	$('#slideDown').click(function() {
+		$('img').slideDown();
+	});
+	$('#slideToggle').click(function() {
+		$('img').slideToggle();
+	});
+	
+	$("#imgFadeIn").click(function() {
+		$('img').fadeIn(1000);
+	});
+	$("#imgFadeOut").click(function() {
+		$('img').fadeOut(1000);
+	});
+	$("#imgFadeTo").click(function() {
+		var 
+		$('img').fadeTo("slow", 0.5);
+	});
+	$("#imgFadeToggle").click(function() {
+		$('img').fadeToggle(1000);
+	});
+	
+});
+
+
+</script>
+
+</head>
+<body>
+	<input id="hide" type="button" value="hide">
+	<input id="show" type="button" value="show">
+	<input id="slideUp" type="button" value="slideUp">
+	<input id="slideDown" type="button" value="slideDown">
+	<input id="slideToggle" type="button" value="slideToggle">
+	<input type="button" id="imgFadeIn" value="fadeIn">
+	<input type="button" id="imgFadeOut" value="fadeOut">
+	<input type="button" id="imgFadeTo" value="fadeTo">
+	<input type="button" id="imgFadeToggle" value="fadeToggle">
+	<br><br>
+	<div><img src="../../image/ice.jpg" style="display: none;"width="500px"></div>
+
+
+</body>
+</html>

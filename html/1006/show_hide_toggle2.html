@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../../js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("div").css({
+			"width" : 500,
+			"height" : 500,
+			"border" : "1px solid black"
+		});
+		$('#imgShow1').click(function() {
+			$('img').show();
+		});
+		$('#imgShow2').click(function() {
+			$('img').show(1000);
+		});
+		$('#imgHide1').click(function() {
+			$('img').hide();
+		});
+		$('#imgHide2').click(function() {
+			$('img').hide(1000);
+		});
+		$('#imgShow3').click(function() {
+			$('img').show("slow", function() {
+				alert("보이기 성공 ");
+			});
+		});
+		$('#imgHide3').click(function() {
+			$('img').hide("slow", function() {
+				alert("감추기 성공 ");
+			});
+		});
+	
+		$('#imgToggle').click(function() {
+			$('img').toggle("slow");
+		});
+	});
+</script>
+</head>
+<body>
+<input type="button" id ="imgShow1" value="이미지 보이기">
+<input type="button" id ="imgShow2" value="천천히 보이기">
+<input type="button" id ="imgShow3" value="보이기 후 처리 ">
+<br><br>
+<input type="button" id ="imgHide1" value="이미지 감추기">
+<input type="button" id ="imgHide2" value="천천히 감추기">
+<input type="button" id ="imgHide3" value="감추기 후 처리 ">
+<br><br>
+<input type="button" id ="imgToggle" value="보이기 <->감추기">
+<br><br>
+<div><img src="../../image/ice.jpg" style="display: none;"width="500px"></div>
+</body> 
+</html>

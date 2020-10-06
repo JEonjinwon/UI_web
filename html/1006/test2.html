@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../../js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+
+		$("a:nth(0)").click(function() {
+			var src = $(this).attr("href");
+			$("img").slideUp(300, function() {
+				$("img").attr("src", src);
+				$("img").slideDown(300);
+			});
+		});
+
+		$("a:nth(1)").click(function() {
+			var src = $(this).attr("href");
+			$("img").fadeOut(300, function() {
+				$("img").attr("src", src);
+				$("img").fadeIn(300);
+			});
+		});
+
+		$("a:nth(2)").click(function() {
+			var src = $(this).attr("href");
+			$("img").hide(300, function() {
+				$("img").attr("src", src);
+				$("img").show(300);
+			});
+
+		});
+	});
+</script>
+</head>
+<body>
+	<h1>교제목록</h1>
+	<ul>
+		<li><a href="../../image/coffee.jpg" onclick="return false;">jQuery교제</a></li>
+		<li><a href="../../image/ice.jpg" onclick="return false;">jsp교제</a></li>
+		<li><a href="../../image/banana.jpg" onclick="return false;">UML교제</a></li>
+	</ul>
+	<img width="200px" height="auto">
+</body>
+</html>

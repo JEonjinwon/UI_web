@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../../js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function() {
+	$("div")
+		.css("border", "2px dotted red")
+		.css("background","pink");
+	$("#imgFadeIn").click(function() {
+		$("div").fadeIn(1000);
+	});
+	$("#imgFadeOut").click(function() {
+		$("div").fadeOut(1000);
+	});
+	$("#imgFadeToggle").click(function() {
+		$("div").fadeToggle(1000);
+	});
+
+	
+});
+
+</script>
+</head>
+<body>
+  <p>이 영역은 버튼을 누르면 사라졌다가 다시 나타납니다.</p>
+   <br>
+  
+   <br>
+    <input type="button" id="imgFadeIn" value="fadeIn">
+	<input type="button" id="imgFadeOut" value="fadeOut">
+	<input type="button" id="imgFadeToggle" value="fadeToggle">
+
+   <div>
+      <p>안녕하십니까.</p>
+      <p>안녕히 가십시오.</p>
+      
+   </div>
+
+</body>
+</html>

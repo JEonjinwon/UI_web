@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+$(document).ready(function() {
+	$("div")
+		.css("border", "2px dotted red")
+		.css("background","pink");
+	$("#Ani").click(function() {
+		$("div").animate({width:"100%",opacity:0.4});
+	});
+	
+	$("#Ani2").click(function() {
+		$("div").animate({left:'250px',height:"+=150px"});
+	});
+	$("#Ani3").click(function() {
+		$("div").animate({width:"100%",opacity:1});
+	});
+
+	$("#Ani4").click(function() {
+		$("div").animate({left:'250px',height:"-=150px"});
+	});
+	
+});
+
+
+</script>
+
+</head>
+<body>
+  
+   <br>
+    <input type="button" id="Ani" value="1번 애니매이션">
+	<input type="button" id="Ani2" value="2번 애니매이션">
+	<input type="button" id="Ani3" value="3번 애니매이션">
+	<input type="button" id="Ani4" value="4번 애니매이션">
+
+   <div>
+      <p>안녕하십니까.</p>
+      <p>안녕히 가십시오.</p>
+      
+   </div>
+</body>
+</html>
