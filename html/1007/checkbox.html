@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../../js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+
+
+
+
+
+$(function () {
+	$("#attrButton").click(function () {
+		
+	alert($("#chk").attr("checked"));
+	alert($("[name='gender']").attr("checked"));
+	alert($("[name='gender']").val());
+	});
+	$("#propButton").click(function() {
+	alert($("#chk").prop("checked"));
+	alert($(":radio:checked").prop("checked"));
+	});
+});
+
+function checkAll() {
+	if($("#cAll").is(':checked')){
+		$("[type =checkbox]","form:nth(1)").prop("checked",true);
+		
+	}else{
+		$("[type =checkbox]","form:nth(1)").prop("checked",false);
+	}
+}
+
+	$(document).ready(function() {
+		$(".ch1").click(function() {
+			if ($("input[name='chkName']:checked").length == $ h) {  
+				$("#cAll").prop("checked", true);
+			} else {
+				$("#cAll").prop("checked", false);
+			}
+		});
+	});
+</script>
+
+</head>
+<body>
+<form>
+	체크박스 : <input type="checkbox" id="chk" checked="checked">
+	<br>
+	라디오 : 
+	<input type="radio" name="gender" value="남자" checked="checked">남자
+	<input type="radio" name="gender" value="여자">여자
+	<br>
+	리스트 박스 : 
+	<select>
+		<option>1번</option>
+		<option>2번</option>
+		<option>3번</option>
+	</select>
+	<br>
+	(readonly) :	
+	<input type="text"  value="가나다" readonly="readonly">
+	<br>
+	(disabled) : 
+	<input type="submit" value="실행" disabled="disabled"> 	
+	<input type="button" id="attrButton" value="attr확인" > 	
+	<input type="button" id="propButton" value="prop확인"> 	
+	</form>
+	<hr>
+	<form>
+	체크박스박스(전체 선택/해제)
+	<br>
+	<label><input type="checkbox" class="ch1" id="cAll" onclick="checkAll()" >전체선택</label>  
+	<label><input type="checkbox" class="ch1" name ="chkName" id="c1">1</label>
+	<label><input type="checkbox" class="ch1" name ="chkName" id="c2">2</label>
+	<label><input type="checkbox" class="ch1" name ="chkName" id="c3">3</label>
+	<label><input type="checkbox" class="ch1" name ="chkName" id="c4">4</label>
+	<label><input type="checkbox" class="ch1" name ="chkName" id="c5">5</label>
+	</form>
+</body>
+</html>

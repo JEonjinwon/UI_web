@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../../js/jquery-3.5.1.min.js"></script>
+
+<script type="text/javascript">
+
+function cAll() {
+            if ($("#checkAll").is(':checked')) {
+                $("input[type=checkbox]").prop("checked", true);
+            } else {
+                $("input[type=checkbox]").prop("checked", false);
+            }
+        }
+
+</script>
+
+</head>
+<body>
+<table border="1" align="center">
+                <tr>
+                    <th><input type="checkbox" id="checkAll" onclick="cAll();"><label for="c0">전체약관동의
+                </tr>
+                <tr>
+                    <th><input type="checkbox" id="c1" required><label for="c1">이용약관(필수)...
+                            target="_blank">약관정보</a><br>
+                        <input type="checkbox" id="c2" required><label for="c2">개인정보처리 동의(필수)...
+                            target="_blank">약관정보</a><br>
+                        <input type="checkbox" id="c3" required><label for="c3">개인정보 제3자 제공 동의...
+                            target="_blank">약관정보</a><br>
+                        <input type="checkbox" id="c4"><label for="c4">이벤트혜택 알림 수신동의(선택)...
+                </tr>
+            </table><br>
+
+</body>
+</html>
