@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../../js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("div").css("border","2px dashed red");
+		$("p").click(function() {
+			if ($(this).parent().is("div")) {
+				$(this).clone().appendTo(this).css("color","red");
+			}else{
+				alert("작업 대상이 아닙니다.");
+			}
+		});
+	});
+	//appendTo는 뒤에있는 객체에 앞에있는 내용을 붙히겠다는 의미이고 
+	//append는 앞에있는 객체에 뒤라는 객체를 붙히겠다는 뜻이다.
+
+</script>
+</head>
+<body>
+	<div>
+		<p>Click 1</p>
+	</div>
+	<p>Click 2</p>
+	<div>
+		<p>Click 3</p>
+	</div>
+	<p>Click 4</p>
+</body>
+</html>
