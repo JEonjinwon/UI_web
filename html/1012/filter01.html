@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../../js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+	$(document)
+			.ready(
+					function() {
+				
+						$("span:contains(jQuery)").css("border", "blue solid 2px")
+						$("span:not(:contains(jQuery))").css("border", "red solid 2px");
+						$("div:has(span)").css("border","green solid 2px")
+						$("div:empty").css("border","orange solid 2px")
+						$("div span").css("color","red").css("font-weight","bold")
+						$("div:parent").css("font-weight","bold").css("font-size","1.5em")
+						
+					
+					});
+</script>
+<style type="text/css">
+
+</style>
+</head>
+<body>
+
+	<div></div>
+	<br>
+	<div>
+		헬로우 <span>오늘도 즐겁게 열심히~~</span>
+	</div>
+	<br>
+	<p>
+		Hello jQuery !! <span>Thank,jQuery!!</span>
+	</p>
+	<br>
+	<div>jQuery!</div>
+	<br>
+	<span>asdasd</span><br><br>
+	<div></div>
+	<br>
+	<hr color="blue">
+	<br>
+</body>
+</html>
