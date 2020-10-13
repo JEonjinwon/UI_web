@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+body {
+	background: #E0F4FF;
+	min-width: 1500px;
+}
+
+table {
+	border: 1px solid black;
+	text-align: left;
+	width: 100%;
+	background: white;
+}
+
+td {
+	border-bottom: 1px solid black;
+	text-align: left;
+	padding-left: 10px;
+
+}
+
+#tdName {
+	background: skyblue;
+	width: 10%;
+}
+
+tr {
+	height: 50px;
+}
+input:focus {
+	outline:none;
+}
+textarea:focus {
+	outline:none;
+}
+</style>
+</head>
+<body>
+
+	<div style="text-align: left; float: left; width: 88%">
+		<span style="font-size: 40px;"><strong>게시판</strong></span>
+	</div>
+
+	<div style="text-align: right; float: left;">
+		<a href="" style="text-decoration: none; color: black;">홈</a> 
+		<a href="" style="text-decoration: none; color: black;">/ 서브메뉴</a>
+		<a href="" style="text-decoration: none; color: black;">/ 현재위치</a>
+	</div>
+
+	<table>
+		
+		<tr>
+			<td id="tdName">제목</td>
+			<td colspan="5"><input type="text" style="width: 95%;border: none;"></td>
+		</tr>
+		<tr>
+			<td id="tdName">작성자</td>
+			<td><input type="text" style="width: 90%;border: none;"></td>
+			<td id="tdName">작성일</td>
+			<td><input type="number" style="width: 90%;border: none;"></td>
+			<td id="tdName">조회수</td>
+			<td><input type="number" style="width: 90%;border: none;"></td>
+		</tr>
+		<tr>
+			<td id="tdName">첨부파일</td>
+			<td colspan="5"><input type="file" style="width: 95%;border: none;"></td>
+		</tr>
+		<tr>
+			<td id="tdName">내용</td>
+			<td colspan="5">
+			<textarea rows="20" cols="250" style="border: none;"></textarea>
+			
+			</td>
+		</tr>
+		</table>
+	<br><br>
+	<div style="text-align: center;">
+		<button style="width: 300px; height: auto; background: grey; color:white;">취소</button>
+		<button style="width: 300px; height: auto; background: blue; color:white;">저장</button>
+	</div>
+</body>
+</html>

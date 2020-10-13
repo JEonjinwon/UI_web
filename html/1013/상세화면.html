@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+body {
+	background: #E0F4FF;
+	min-width: 1500px;
+}
+
+table {
+	border: 1px solid black;
+	text-align: left;
+	width: 100%;
+	background: white;
+}
+
+td {
+	border-bottom: 1px solid black;
+	text-align: left;
+	padding-left: 10px;
+	width: 50%;
+}
+
+#tdName {
+	background: skyblue;
+	width: 10%;
+}
+
+tr {
+	height: 50px;
+}
+</style>
+</head>
+<body>
+
+	<div style="text-align: left; float: left; width: 88%">
+		<span style="font-size: 40px;"><strong>상세페이지</strong></span>
+	</div>
+
+	<div style="text-align: right; float: left;">
+		<a href="" style="text-decoration: none; color: black;">홈</a> 
+		<a href="" style="text-decoration: none; color: black;">/ 서브메뉴</a>
+		<a href="" style="text-decoration: none; color: black;">/ 현재위치</a>
+	</div>
+
+	<table>
+		<caption style="border: 1px solid black; border-bottom: none; background: white;">
+			<div style="text-align: left; float: left; width: 92%">
+				<span style="font-size: 30px;"><strong>서브타이틀</strong></span> <span
+					style="color: red"> *</span>는 필수 입력 사항입니다
+			</div>
+			<div style="text-align: right; float: left;">
+				<input type="button" value="취소"> <input type="button"
+					value="저장">
+			</div>
+
+
+		</caption>
+		<tr>
+			<td id="tdName">guideTip</td>
+			<td><input type="text" style="width: 95%"></td>
+			<td id="tdName">인풋 페스워드</td>
+			<td><input type="password" style="width: 95%"></td>
+		</tr>
+		<tr>
+			<td id="tdName">툴팁 한줄</td>
+			<td><input type="text" style="width: 80%"></td>
+			<td id="tdName">로딩</td>
+			<td><input type="text" style="width: 60%"
+				placeholder="버튼을 클릭하면 로딩이 나타납니다."> <input type="button"
+				value="버튼클릭"></td>
+		</tr>
+		<tr>
+			<td id="tdName">날짜 선택</td>
+			<td><input type="date" style="width: 95%"></td>
+			<td id="tdName">기간선택</td>
+			<td><input type="date" style="width: 95%"></td>
+		</tr>
+		<tr>
+			<td id="tdName">날짜 시간분</td>
+			<td colspan="3"><input type="date" style="width: 14%;">
+				<input type="number" style="width: 14%;"> <input
+				type="number" style="width: 14%;"> ~ <input type="date"
+				style="width: 14%;"> <input type="number"
+				style="width: 14%;"> <input type="number"
+				style="width: 14%;"></td>
+		</tr>
+		<tr>
+			<td id="tdName">이메일</td>
+			<td colspan="3"><input type="email" placeholder="이메일 아이디">
+				@ <input type="email" placeholder="직접입력"> <select>
+					<option>google.com</option>
+					<option>naver.com</option>
+					<option>daum.net</option>
+					<option>nate.com</option>
+			</select></td>
+		</tr>
+		<tr>
+			<td id="tdName">전화번호</td>
+			<td><input type="number" style="width: 25%"> - <input
+				type="number" style="width: 25%"> - <input type="number"
+				style="width: 25%"></td>
+			<td id="tdName">전화번호</td>
+			<td><input type="number" style="width: 90%"
+				placeholder="000 0000 0000"></td>
+		</tr>
+		<tr>
+			<td id="tdName">주소</td>
+			<td colspan="3"><input type="text" style="width: 60%"> <input
+				type="button" value="주소 검색"><br> <input type="text"
+				style="width: 30%"> <input type="text" style="width: 30%"
+				placeholder="상세주소를 입력해주세요."></td>
+		</tr>
+		<tr>
+			<td id="tdName">input + icoBtn</td>
+			<td><input type="text" style="width: 80%"></td>
+			<td id="tdName">select</td>
+			<td><select style="width: 90%">
+					<option>구분</option>
+			</select></td>
+		</tr>
+		<tr>
+			<td id="tdName">textarea</td>
+			<td colspan="3"><textarea rows="5" cols="100"></textarea></td>
+		</tr>
+		<tr>
+			<td id="tdName">checkboxes</td>
+			<td colspan="3"><label> <input type="checkbox"
+					name="chk" checked="checked" name="chk">체크박스-checked
+			</label> <label> <input type="checkbox" name="chk">체크박스
+			</label> <label> <input type="checkbox" name="chk"
+					disabled="disabled">체크박스-disabled
+			</label> <label> <input type="checkbox" name="chk" checked="checked"
+					disabled="disabled">체크박스-disabled,checked
+			</label></td>
+
+		</tr>
+		<tr>
+			<td id="tdName">radios</td>
+			<td colspan="3"><label> <input type="radio" name="rd"
+					checked="checked">라디오-checked
+			</label> <label> <input type="radio" name="rd">라디오
+			</label> <label> <input type="radio" name="rd" disabled="disabled">라디오-disabled
+			</label> <label> <input type="radio" name="rd" checked="checked"
+					disabled="disabled">라디오-disabled,checked
+			</label></td>
+
+		</tr>
+		<tr>
+			<td id="tdName">첨부파일</td>
+			<td colspan="3"><input type="text"> <input type="file">
+			</td>
+
+		</tr>
+
+	</table>
+	<br>
+	<br>
+	<table>
+		<caption style="border: 1px solid black; border-bottom: none; background: white;">
+			<div style="text-align: left; float: left; width: 92%">
+				<span style="font-size: 30px;"><strong>서브타이틀</strong></span>
+
+			</div>
+			<div style="text-align: right; float: left;">
+				<input type="button" value="취소"> <input type="button"
+					value="저장">
+			</div>
+
+
+		</caption>
+		<tr>
+			<td id="tdName">제목</td>
+			<td style="width: 30%;">내용</td>
+			<td id="tdName">제목</td>
+			<td style="width: 30%;">내용</td>
+		</tr>
+		<tr>
+			<td id="tdName">제목</td>
+			<td colspan="3" style="width: 30%;">내용</td>
+		</tr>
+		<tr>
+			<td id="tdName">제목</td>
+			<td colspan="3" style="width: 30%;">내용</td>
+		</tr>
+		<tr>
+			<td id="tdName">제목</td>
+			<td style="width: 30%;">내용</td>
+			<td id="tdName">제목</td>
+			<td style="width: 30%;">내용</td>
+		</tr>
+		<tr>
+			<td id="tdName">제목</td>
+			<td style="width: 30%;">내용</td>
+			<td id="tdName">제목</td>
+			<td style="width: 30%;">내용</td>
+		</tr>
+		<tr>
+			<td id="tdName">제목</td>
+			<td colspan="3" style="width: 30%;">내용</td>
+		</tr>
+	</table>
+	<br><br>
+	<div style="text-align: center;">
+		<button style="width: 300px; height: auto; background: grey; color:white;">취소</button>
+		<button style="width: 300px; height: auto; background: blue; color:white;">저장</button>
+	</div>
+</body>
+</html>
