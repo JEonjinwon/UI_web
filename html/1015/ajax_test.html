@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../../js/jquery-3.5.1.min.js"></script>
+<script>
+	function changeDiv1() {
+		//$("#div1") 변경하기
+		$.ajax({
+			url: "intro.html"
+			, dataType : ""
+			, success : function (data) {
+				$("#div1").html(data);	
+				makeTable();	
+			}
+			, error : function () {}
+		});
+	}
+function makeTable() {
+	var table = "<table>"
+table +='	<table border="1">'
+table +='<tr>'
+table +='	<th>제목</th>'
+table +='	<th>가수</th>'
+table +='</tr>'
+table +='<tr>'
+table +='	<td>12</td>'
+table +='	<td>12</td>'
+table +='</tr>'
+table +='<tr>'
+table +='	<td>12</td>'
+table +='	<td>12</td>'
+table +='</tr>'
+	
+	$("#div1").html();
+}
+
+</script>
+</head>
+<body>
+
+
+</table>
+	<button type="button" onclick="changeDiv1()">바꿔</button>
+	<div id="div1" style="border : 1px solid red;">
+		<h1>AJAX 테스트</h1>
+		<p>뭐지 모르겠음</p>
+	</div>
+</body>
+</html>

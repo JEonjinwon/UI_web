@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../../js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+
+//폼 submit post방식 호출
+function fnSubmit() {
+	var fm = document.getElementById("myForm");
+	fm.method="post";
+	fm.submit();
+}
+
+$(document).ready(function(){
+	   $("#AjaxBtn").click(function(){
+	      $.ajax({
+	         url : "get_post2.html"
+	         , type : "GET"
+	         , success:function(data){
+	            $('span').html(data);
+	         }
+	         ,error : function(jqXHR, textStatus, errorThrown){
+	            alert("에러\n" + textStatus + " : " + errorThrown);
+	         }
+	      });
+	   });
+	});
+
+</script>
+</head>
+<body>
+	<form action="get_post2.html"method="get" id="myForm">
+		이름 : <input type="text" name="이름"><br> 
+		나이 : <input type="number"name="나이"><br><br>
+		 취미 : 
+		<label><input type="checkbox"name="축구">축구</label>
+		<label><input type="checkbox"name="야구">야구</label>
+		<label><input type="checkbox"name="등산">등산</label>
+		<label><input type="checkbox"name="독서">독서</label>
+		<label><input type="checkbox"name="게임">게임</label>
+		<label><input type="checkbox"name="영화">영화</label> 
+		
+		
+		
+		
+		<br><br>
+		<input type="button" value="post전송" onclick="fnSubmit()"> 
+		<input type="submit" value="get전송" id="getBtn">
+		<hr>
+		<input type="button" value="Ajax전송" id="AjaxBtn">
+	</form>
+	<span id="resultAjax"></span>
+<div id="div1"></div>
+
+</body>
+</html>
