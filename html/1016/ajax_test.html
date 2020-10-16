@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AJAX 호출 테스트</title>
+<script src="../../js/jquery-3.5.1.min.js"></script>
+<script>
+$(function () {
+	$('#btnText').click(function () {
+		$.ajax({
+			url:"textdata.txt"
+			,success:function(data){
+				$("#divResult").html(data);
+			}
+			,error:function(){
+				alert("텍스트 파일 실패...");
+			}
+		});
+	});
+	$('#btnHtml1').click(function () {
+		$.ajax({
+			url:"htmldata.html"
+			,success:function(data){
+				$("#divResult").html(data);
+			}
+			,error:function(xhr){
+				alert("html 파일 실패..."+xhr.status);
+			}
+		});
+	});
+	
+	$('#btnHtml2').click(function () {
+		$.ajax({
+			url:"html.html"
+			,success:function(data){
+				$("#divResult").html(data);
+			}
+			,error:function(xhr){
+				alert("html 파일 실패..."+xhr.status);
+			}
+		});
+	});
+	$('#btnXml').click(function () {
+		$.ajax({
+			url:"xmldata.xml"
+			,dataType: "xml" 
+			,success:function(data){
+				makeTable(data);
+				//$("#divResult").html(data);
+			}
+			,error:function(xhr){
+				alert("xml 파일 실패..."+xhr.status);
+			}
+		});
+	});
+	$('#btnXml2').click(function () {
+		$.ajax({
+			url:"cd_catalog.xml"
+			,dataType: "xml" 
+			,success:function(data){
+				makeTable2(data);
+				//$("#divResult").html(data);
+			}
+			,error:function(xhr){
+				alert("xml 파일 실패..."+xhr.status);
+			}
+		});
+	});
+	$('#btnXml3').click(function () {
+		$.ajax({
+			url:"cd_catalog_1.xml"
+			,dataType: "xml" 
+			,success:function(data){
+				makeTable3(data);
+				//$("#divResult").html(data);
+			}
+			,error:function(xhr){
+				alert("xml 파일 실패..."+xhr.status);
+			}
+		});
+	});
+	
+	
+});
+
+
+function makeTable(xmlData) {
+	   var tmp = xmlData.getElementsByTagName("from");
+	   
+	   var str ="";
+	   for(var i=0; i<tmp.length; i++){
+	      str = str
+	            + "<p>"
+	            + tmp[i].childNodes[0].nodeValue
+	            + "</p>"
+	   }
+	   
+	   $("#divResult").html(str);
+	}
+
+
+function makeTable2(xml2Data) {
+	   var tmp = xml2Data.getElementsByTagName("TITLE");
+	   var tmp2 = xml2Data.getElementsByTagName("ARTIST");
+	   var tmp3 = xml2Data.getElementsByTagName("COUNTRY");
+	   var tmp4 = xml2Data.getElementsByTagName("COMPANY");
+	   var tmp5 = xml2Data.getElementsByTagName("PRICE");
+	   var tmp6 = xml2Data.getElementsByTagName("YEAR");
+	   
+	   var str ="<table style='border:1px solid red;'>"
+	   			+"<tr>"
+	            + "<th style='border:1px solid red;'>"
+	            + "제목 "
+	            + "</th>"
+	            + "<th style='border:1px solid red;'>"
+	            + "아티스트 "
+	            + "</th>"
+	            + "<th style='border:1px solid red;'>"
+	            + "국적 "
+	            + "</th>"
+	            + "<th style='border:1px solid red;'>"
+	            + "회사 "
+	            + "</th>"
+	            + "<th style='border:1px solid red;'>"
+	            + "가격 "
+	            + "</th>"
+	            + "<th style='border:1px solid red;'>"
+	            + "연도 "
+	            + "</th>"
+	            + "</tr>";
+	   	
+	   for(var i=0; i<tmp.length; i++){
+	      str = str
+	            + "<td style='border:1px solid red;'>"
+	            + tmp[i].childNodes[0].nodeValue
+	            + "</td>"
+	            + "<td style='border:1px solid red;'>"
+	            + tmp2[i].childNodes[0].nodeValue
+	            + "</td>"
+	            + "<td style='border:1px solid red;'>"
+	            + tmp3[i].childNodes[0].nodeValue
+	            + "</td>"
+	            + "<td style='border:1px solid red;'>"
+	            + tmp4[i].childNodes[0].nodeValue
+	            + "</td>"
+	            + "<td style='border:1px solid red;'>"
+	            + tmp5[i].childNodes[0].nodeValue
+	            + "</td>"
+	            + "<td style='border:1px solid red;'>"
+	            + tmp6[i].childNodes[0].nodeValue
+	            + "</td>"
+	           
+	            + "</tr>"
+	            
+	   }
+	   str= str +"</table>"
+	   $("#divResult").html(str);
+	}
+	
+	
+function makeTable3(xml2Data) {
+	/*    var tmp = xml2Data.getElementsByTagName("TITLE");
+	   var tmp2 = xml2Data.getElementsByTagName("ARTIST");
+	   var tmp3 = xml2Data.getElementsByTagName("COUNTRY");
+	   var tmp4 = xml2Data.getElementsByTagName("COMPANY");
+	   var tmp5 = xml2Data.getElementsByTagName("PRICE");
+	   var tmp6 = xml2Data.getElementsByTagName("YEAR"); */
+	   
+	   
+	   var tmpCD = xml2Data.getElementsByTagName("CD");
+	   
+	   var str ="<table style='border:1px solid red;'>"
+	   			+"<tr>"
+	            + "<th style='border:1px solid red;'>"
+	            + "제목 "
+	            + "</th>"
+	            + "<th style='border:1px solid red;'>"
+	            + "아티스트 "
+	            + "</th>"
+	            + "<th style='border:1px solid red;'>"
+	            + "국적 "
+	            + "</th>"
+	            + "<th style='border:1px solid red;'>"
+	            + "회사 "
+	            + "</th>"
+	            + "<th style='border:1px solid red;'>"
+	            + "가격 "
+	            + "</th>"
+	            + "<th style='border:1px solid red;'>"
+	            + "연도 "
+	            + "</th>"
+	            + "</tr>";
+	          
+	            console.log(tmpCD);
+	   for(var i=0; i<tmpCD.length; i++){
+		 
+		   str = str
+		   	if(tmpCD[i].getElementsByTagName("TITLE").length>0){
+		   		+ "<td style='border:1px solid red;'>"
+	            + tmpCD[i].childNodes[1].nodeValue
+	            + "</td>"
+		   	}else{
+		   		+ "<td style='border:1px solid red;'>"
+	            + "</td>"
+		   	}
+			if(tmpCD[i].getElementsByTagName("ARTIST").length>0){
+				 + "<td style='border:1px solid red;'>"
+		            + tmpCD[i].childNodes[3].nodeValue
+		            + "</td>"
+			}else{
+				+ "<td style='border:1px solid red;'>"
+	            + "</td>"
+			}	   
+			if(tmpCD[i].getElementsByTagName("COUNTRY").length>0){
+				  + "<td style='border:1px solid red;'>"
+		            + tmpCD[i].childNodes[5].nodeValue
+		            + "</td>"
+			}else{
+				+ "<td style='border:1px solid red;'>"
+	            + "</td>"
+			}	   
+			if(tmpCD[i].getElementsByTagName("COMPANY").length>0){
+				 + "<td style='border:1px solid red;'>"
+		            + tmpCD[i].childNodes[7].nodeValue
+		            + "</td>"
+			}else{
+				+ "<td style='border:1px solid red;'>"
+	            + "</td>"
+			}	   
+			if(tmpCD[i].getElementsByTagName("PRICE").length>0){
+				 + "<td style='border:1px solid red;'>"
+		            + tmpCD[i].childNodes[9].nodeValue
+		            + "</td>"
+			}else{
+				+ "<td style='border:1px solid red;'>"
+	            + "</td>"
+			}	   
+			if(tmpCD[i].getElementsByTagName("YEAR").length>0){
+				 + "<td style='border:1px solid red;'>"
+		            + tmpCD[i].childNodes[11].nodeValue
+		            + "</td>"
+			}else{
+				+ "<td style='border:1px solid red;'>"
+	            + "</td>"
+			}	   
+	            + "</tr>"
+	            
+		
+		}
+	   str= str +"</table>"
+	   $("#divResult").html(str);
+	}
+
+
+
+
+
+
+</script>
+<style type="text/css">
+
+td:hover{
+	background: black;
+	color: white;
+}
+
+</style>
+</head>
+<body>
+	<h1>AJAX 테스트</h1>
+	<button type="button" id="btnText">텍스트파일</button>
+	<button type="button" id="btnHtml1">Html1</button>
+	<button type="button" id="btnHtml2">Html2</button>
+	<br>
+	<br>
+	<button type="button" id="btnXml">Xml</button>
+	<button type="button" id="btnXml2" >Xml2</button>
+	<button type="button" id="btnXml3" >Xml3</button>
+	<hr>
+	<div id="divResult" "></div>
+</body>
+</html>
