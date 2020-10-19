@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../../js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+var obj = {
+		name:"홍길동"
+		, addr:{ city:"대전광역시"
+				,gu:"중구"
+				,dong:"대흥동"
+				,zipcode:"12345"
+			}
+		, hobby: ["무술","축구","야구"]
+		, birth:"1996-07-07"
+		};
+
+function proc(){
+	//객체를 JSON 스트링으로 변환
+	var str = JSON.stringify(obj);
+	$("#1conversion").html(str);
+	
+	//JSON 스트링을 객체로 변환
+	var obj1 = JSON.parse(str);
+	$("#2conversion").text(obj1);
+	
+	$("#name").text(obj1.name); 
+	$("#addr").text(obj1.addr.city +" "+obj1.addr.gu+" "+obj1.addr.dong+" "+obj1.addr.zipcode); 
+	var hobbyText="";
+/* 	for(var i=0; i<obj1.hobby.length;i++){
+		if(i<obj1.hobby.length-1){
+			hobbyText+=obj1.hobby[i] +", ";
+		}else{
+			hobbyText+=obj1.hobby[i] ;
+		}
+	} 
+	$("#hobby").text(hobbyText);  */
+	
+	 for(x in obj1.hobby){
+		if(x<obj1.hobby.length-1){
+			hobbyText+=obj1.hobby[x] +", ";
+		}
+		else{
+			hobbyText+=obj1.hobby[x];
+		}
+	}
+	$("#hobby").text(hobbyText); 
+	
+	
+	$("#birth").text(obj1.birth); 
+		
+}
+
+</script>
+</head>
+<body>
+<input type="button" value="JSON 변환 테스트" onclick="proc()">
+<br>
+<br>
+<h3>1차변환 (obj > str) :</h3><span id="1conversion"></span><br><br>
+<h3>2차변환 (str > obj) :</h3><span id="2conversion"></span><br><br>
+<h3>이름 :</h3><span id="name"></span><br><br>
+<h3>주소 :</h3><span id="addr"></span><br><br>
+<h3>취미 :</h3><span id="hobby"></span><br><br>
+<h3>생년월일 :</h3><span id="birth"></span><br><br>
+
+
+
+</body>
+</html>
