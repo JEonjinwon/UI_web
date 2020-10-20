@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../../js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+
+//폼 submit post방식 호출
+function fnSubmit(type) {
+	var fm = document.getElementById("myForm");
+	fm.method = type;
+	if(type=="post"){
+		fm.action ="get_postTest.jsp";
+	}else{
+		fm.action ="get_post2.html";
+	}
+	fm.submit();
+}
+
+$(document).ready(function(){
+	   $("#AjaxBtn").click(function(){
+	      $.ajax({
+	         url : "get_postTest.jsp"
+	         ,data:$("myForm").serialize()
+	         ,cache : false
+		     , Type : "post"
+	         , success:function(data){
+	            $('span').html(data);
+	         }
+	         ,error : function(jqXHR, textStatus, errorThrown){
+	            alert("에러\n" + textStatus + " : " + errorThrown);
+	         }
+	      });
+	   });
+	});
+
+</script>
+</head>
+<body>
+	<form id="myForm">
+		이름 : <input type="text" name="이름"><br> 
+		나이 : <input type="number"name="나이"><br><br>
+		 취미 : 
+		<label><input type="checkbox"name="hobby"value="축구">축구</label>
+		<label><input type="checkbox"name="hobby"value="야구">야구</label>
+		<label><input type="checkbox"name="hobby"value="등산">등산</label>
+		<label><input type="checkbox"name="hobby"value="독서">독서</label>
+		<label><input type="checkbox"name="hobby"value="게임">게임</label>
+		<label><input type="checkbox"name="hobby"value="영화">영화</label> 
+		
+		
+		
+		
+		<br><br>
+		<input type="button" value="post전송" onclick="fnSubmit('post')"> 
+		<input type="button" value="get전송" id="getBtn" onclick="fnSubmit('get')">
+		<hr>
+		<input type="button" value="Ajax전송" id="AjaxBtn">
+	</form>
+	<span id="resultAjax"></span>
+<div id="div1"></div>
+
+</body>
+</html>
