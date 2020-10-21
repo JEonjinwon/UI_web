@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../../js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+
+
+$(document).ready(function() {
+   $("#inputBtn").click(function() {
+      $.ajax({
+         url:"/MemberServlet"
+         ,type:"post"
+         ,data:$("#myForm").serialize()
+         ,dataType:"json"
+         ,success:function(data){
+         var textHtml="<table>"
+                     +"<tr>"
+                     +"<th>글번호 </th>"
+                     +"<th>아이디 </th>"
+                     +"<th>이름 </th>"
+                     +"<th>주소 </th>"
+                     +"<th>전번 </th>"
+                     +"</tr>";
+         for(i in data){
+            textHtml+="<tr>"
+                  +"<td>"+data[i].num+"</td>"
+                  +"<td>"+data[i].id+"</td>"
+                  +"<td>"+data[i].name+"</td>"
+                  +"<td>"+data[i].addr+"</td>"
+                  +"<td>"+data[i].tel+"</td>"
+                  +"</tr>";
+            
+         }   
+            textHtml+="</table>";
+            $("#divResult").html(textHtml);
+            
+         }
+         ,error:function(){
+            alert("jsp 파일 실패...");
+         }
+      });
+
+   });
+   
+});
+
+</script>
+
+<style type="text/css">
+table {
+    border-top: 1px solid #444444;
+    border-collapse: collapse;
+   text-align: center;
+}
+th {
+   width: 200px;
+   background: skyblue;
+   
+}
+td,th{
+     border-bottom: 1px solid #444444;
+    padding: 10px;
+   
+}
+
+</style>
+</head>
+<body>
+	<form id="myForm">
+		<h1>멤버리스트</h1>
+		<br>
+		<div style="border: 1px solid blue; width: 500px" >
+		<h2>
+			<p>검색조건
+		</h2>
+		<h3>
+			전부 빈칸은 전체 출력입니다. <br>ID 또는 이름을 입력하세요.
+			</p>
+		</h3>
+		
+		<br>
+			사용자 ID &nbsp&nbsp&nbsp<input type="text" id="inputId" name="아이디"> <br>
+			사용자 이름 <input type="text" id="inputName" name="이름"> 
+			<input type="button"id="inputBtn" value="버튼" onclick="fnSubmit(post)"> <br>
+		<br>
+		</div>
+		<br>
+		<div id="divResult"></div>
+		<br>
+	</form>
+</body>
+</html>
